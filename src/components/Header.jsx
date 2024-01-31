@@ -24,7 +24,7 @@ const Header = () =>{
             <li className='list-item line-height-10  hover:text-orange-500'>Cart</li>
             <li className='list-item line-height-10'>
                <button 
-                  className="bg-orange-400 px-3 py-1 rounded-full font-medium hover:bg-orange-500"
+                  className="bg-orange-400 px-3 py-1 rounded-full font-medium hover:bg-blue-500"
                   onClick={() => {
                      logToggle === 'Login' ? setLogToggle('Logout') : setLogToggle('Login')
                   }}
