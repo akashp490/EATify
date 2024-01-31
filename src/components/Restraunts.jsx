@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IMG_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
-import resApi from "../utils/mockData";
 
 
 
@@ -12,13 +11,13 @@ import resApi from "../utils/mockData";
       // const [resInfo, setResInfo] = useState([]);
       
       
-      const [resInfo, setResInfo] = useState(resApi.map( e => e));
+      const [resInfo, setResInfo] = useState([]);
 
 
 
       const fetchRes = async() => {         
       try {
-         const response = await fetch();
+         const response = await fetch('/api');
          const json = await response.json();
          
          setResInfo(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);

@@ -4,16 +4,17 @@ import { useEffect, useState } from 'react';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
 import SearchBox from './search-component';
-import resApi from '../utils/mockData';
 
 
 
 const Body = () => {
-   const [listOfRes, setListOfRes] = useState(resApi.map(e => e));
-   const [filteredResList, setFilteredResList] = useState(resApi.map(e => e));  
+   const [listOfRes, setListOfRes] = useState([]);
+   const [filteredResList, setFilteredResList] = useState([]);  
    const [topButton, setTopButton] = useState(true);   
    
    const LabelCard = LabelledResCard(ResCards);
+   
+
 
    useEffect(() => {
       fetchData();
@@ -21,7 +22,7 @@ const Body = () => {
    
    const fetchData = async () => {
       try {
-         const response = await fetch();
+         const response = await fetch('/api');
          const json = await response?.json();        
         
          setListOfRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -33,12 +34,14 @@ const Body = () => {
       }
    } 
     
-
-   console.log(filteredResList);
    
 
    if(listOfRes?.length === 0) {            
-      return  <Shimmer  />  
+      return (
+         <div className='flex flex-wrap gap-4 w-[100%] sm:justify-center'>
+            <Shimmer  />
+         </div>
+      )   
    }
 
    
@@ -77,18 +80,15 @@ const Body = () => {
 
       </div>
 
-      <div className='flex flex-wrap gap-4 w-[100%] sm: justify-center'>                    
+      <div className='flex flex-wrap gap-4 w-[100%] sm:justify-center'>                    
          {filteredResList?.map((restaurant) => (           
             <Link key={restaurant?.info?.id} to={"/restaurants/"+ restaurant?.info?.id} >
 
-             {(restaurant?.info?.avgRating > 4.4) ? <LabelCard resData={restaurant} /> : 
+             {restaurant?.info?.avgRating > 4.3 ? <LabelCard resData={restaurant} /> : 
              <ResCards  resData={restaurant} />      
              }   
 
-               {/* <ResCards  resData={restaurant} /> */}
-
-
-             
+             {/* <ResCards  resData={restaurant} /> */}             
 
             </Link>
          ))   

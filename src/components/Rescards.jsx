@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 /* eslint-disable no-unsafe-optional-chaining */
 /* eslint-disable react/prop-types */
 import { IMG_URL } from "../utils/constants";
@@ -26,14 +27,15 @@ return (
    </div>
 )};
 
-export const LabelledResCard = (ResCards) => {
+export const LabelledResCard = (ResCards) => {  
    return (props) => {
-      <div>
-         <h3 className="absolute bg-black">Popular</h3>
-         <ResCards {...props}  />
-      </div>    
-      
-   }
-}
+      return(
+            <div className="h-full">
+               <label className="absolute p-1 bg-orange-400 rounded-md">Suggested</label>
+               <ResCards {...props} />
+            </div>
+      );        
+   };
+};
 
 export default ResCards

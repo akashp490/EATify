@@ -1,26 +1,28 @@
  const Shimmer = () => {
    return(
-   <div className="flex flex-wrap justify-center">
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>              
-      <div className="w-[170px] h-[310px] p-[10px] m-[5px] rounded-md bg-[#eaeaea]"></div>             
+   <div className="flex flex-wrap justify-center gap-2 m-3">
+      
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+      <div className="w-[190px] h-[310px]  bg-orange-100 p-4 rounded-xl hover:bg-orange-200"></div>
+
+
+               
 
    </div>
    );
