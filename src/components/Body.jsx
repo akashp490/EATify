@@ -36,7 +36,7 @@ const Body = () => {
          setFilteredResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 
       } catch (error) {
-         console.error('Error fetching data from restautant api ', error);
+         console.error('Error fetching data from restautant api ');
       }
    } 
     
