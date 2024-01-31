@@ -4,12 +4,18 @@ import { useEffect, useState } from 'react';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
 import SearchBox from './search-component';
+import resApi from '../utils/mockData';
+
 
 
 
 const Body = () => {
-   const [listOfRes, setListOfRes] = useState([]);
-   const [filteredResList, setFilteredResList] = useState([]);  
+   // const [listOfRes, setListOfRes] = useState([]);
+   // const [filteredResList, setFilteredResList] = useState([]); 
+
+   const [listOfRes, setListOfRes] = useState(resApi.map(e => e));
+   const [filteredResList, setFilteredResList] = useState(resApi.map(e => e));
+
    const [topButton, setTopButton] = useState(true);   
    
    const LabelCard = LabelledResCard(ResCards);
