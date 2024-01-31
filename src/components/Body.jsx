@@ -84,11 +84,11 @@ const Body = () => {
          {filteredResList?.map((restaurant) => (           
             <Link key={restaurant?.info?.id} to={"/restaurants/"+ restaurant?.info?.id} >
 
-             {restaurant?.info?.avgRating > 4.3 ? <LabelCard resData={restaurant} /> : 
+             {/* {restaurant?.info?.avgRating > 4.3 ? <LabelCard resData={restaurant} /> : 
              <ResCards  resData={restaurant} />      
-             }   
+             }    */}
 
-             {/* <ResCards  resData={restaurant} /> */}             
+             <ResCards  resData={restaurant} />             
 
             </Link>
          ))   
