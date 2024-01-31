@@ -12,7 +12,7 @@ const Body = () => {
    const [filteredResList, setFilteredResList] = useState([]);  
    const [topButton, setTopButton] = useState(true);   
    
-   const LabelCard = LabelledResCard(ResCards);
+   // const LabelCard = LabelledResCard(ResCards);
    
 
 
