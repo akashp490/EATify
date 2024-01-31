@@ -77,7 +77,7 @@ const Body = () => {
 
       </div>
 
-      <div className='flex flex-wrap gap-4 w-[100%]'>                    
+      <div className='flex flex-wrap gap-4 w-[100%] sm: justify-center'>                    
          {filteredResList?.map((restaurant) => (           
             <Link key={restaurant?.info?.id} to={"/restaurants/"+ restaurant?.info?.id} >
 
