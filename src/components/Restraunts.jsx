@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IMG_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
+import resApi from "../utils/mockData";
 
 
 
@@ -11,7 +12,7 @@ import Shimmer from "./Shimmer";
       // const [resInfo, setResInfo] = useState([]);
       
       
-      const [resInfo, setResInfo] = useState([]);
+      const [resInfo, setResInfo] = useState(resApi.map(e => e));
 
 
 
@@ -22,7 +23,7 @@ import Shimmer from "./Shimmer";
          
          setResInfo(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       } catch (error) {
-         console.error('Error fetching restaurant data');
+         console.error('Error fetching restaurant data in Restaurants page');
       }
    }    
 
