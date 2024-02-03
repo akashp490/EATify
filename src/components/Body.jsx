@@ -4,24 +4,24 @@ import { useEffect, useState } from 'react';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
 import SearchBox from './search-component';
-import resApi from '../utils/mockData';
+
+// import resApi from '../utils/mockData';
 
 
 
 
 const Body = () => {
-   // const [listOfRes, setListOfRes] = useState([]);
-   // const [filteredResList, setFilteredResList] = useState([]); 
+   const [listOfRes, setListOfRes] = useState([]);
+   const [filteredResList, setFilteredResList] = useState([]); 
 
-   const [listOfRes, setListOfRes] = useState(resApi.map(e => e));
-   const [filteredResList, setFilteredResList] = useState(resApi.map(e => e));
+   // const [listOfRes, setListOfRes] = useState(resApi.map(e => e));
+   // const [filteredResList, setFilteredResList] = useState(resApi.map(e => e));
 
    const [topButton, setTopButton] = useState(true);   
    
-   const LabelCard = LabelledResCard(ResCards);
+   const LabelCard = LabelledResCard(ResCards);   
+
    
-
-
    useEffect(() => {
       fetchData();
    },[])
@@ -29,14 +29,11 @@ const Body = () => {
    const fetchData = async () => {
       try {
          const response = await fetch('/api');
-         const json = await response?.json();        
-        
+         const json = await response?.json();               
          setListOfRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-
-         setFilteredResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-
+         setFilteredResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       } catch (error) {
-         console.error('Error fetching data from restautant api ');
+         console.error("Error fetching api data");
       }
    } 
     
@@ -64,11 +61,11 @@ const Body = () => {
 
         
          <button 
-               className="bg-orange-400 font-medium rounded-full m-3 p-2 hover:bg-orange-500"
+               className="bg-orange-400  font-medium rounded-full m-3 p-2 hover:bg-orange-500 active:bg-orange-900 "
                onClick={() => {
 
                  if(topButton) {const filtered = listOfRes?.filter((restraunt) => (
-                  restraunt.info.avgRating > 4.4
+                  restraunt.info.avgRating > 4.3
                   ));
 
                   setFilteredResList(filtered);
@@ -88,7 +85,7 @@ const Body = () => {
 
       <div className='flex flex-wrap gap-4 w-[100%] sm:justify-center'>                    
          {filteredResList?.map((restaurant) => (           
-            <Link key={restaurant?.info?.id} to={"/restaurants/"+ restaurant?.info?.id} >
+            <Link key={restaurant?.info?.id} to={"/restaurants/"+ restaurant?.info?.id}  >
 
              {restaurant?.info?.avgRating > 4.3 ? <LabelCard resData={restaurant} /> : 
              <ResCards  resData={restaurant} />      

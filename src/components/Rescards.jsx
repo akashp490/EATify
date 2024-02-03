@@ -16,7 +16,7 @@ const ResCards = (props) => {
          } = resData?.info ;
 
 return (    
-   <div className='w-[200px] h-full bg-orange-100 p-4 rounded-xl hover:bg-orange-200'>      
+   <div className='w-[200px] h-full bg-orange-100 p-4 rounded-xl hover:bg-orange-200 active:bg-orange-400'>      
       <img 
       className='p-1 mb-2 rounded-xl object-cover h-32 w-full '
       src={ IMG_URL + cloudinaryImageId } />

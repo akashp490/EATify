@@ -11,10 +11,10 @@ import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import About from './components/About';
 import Contact from './components/Contact';
 import Error from './components/Error';
-import Restaurants from './components/Restraunts';
 
 import { Suspense, lazy } from 'react';
 import Shimmer from './components/Shimmer';
+import RestaurantMenu from './components/RestaurantMenu';
 
 
 
@@ -47,7 +47,7 @@ const appRouter = createBrowserRouter([
          },
          {
             path: "/restaurants/:resId",
-            element: <Restaurants  />
+            element: <RestaurantMenu  />
          },
          {
             path: "/grocery",

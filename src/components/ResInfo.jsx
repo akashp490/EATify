@@ -3,16 +3,16 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IMG_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
-import resApi from "../utils/mockData";
+// import resApi from "../utils/mockData";
 
 
 
    const Restaurants = () => {
 
-      // const [resInfo, setResInfo] = useState([]);
+       const [resInfo, setResInfo] = useState([]);
       
       
-      const [resInfo, setResInfo] = useState(resApi.map(e => e));
+      // const [resInfo, setResInfo] = useState(resApi.map(e => e));
 
 
 
@@ -39,15 +39,7 @@ import resApi from "../utils/mockData";
 
    console.log(res?.info);    
 
-   // const {name,
-   //        cloudinaryImageId,
-   //        aggregatedDiscountInfoV3,
-   //        cuisines
-   //       }  = res?.info;
-
-
-
-   // return  <Shimmer  />
+   
  
    if(resInfo.length === 0) {            
       return  <Shimmer  />  
