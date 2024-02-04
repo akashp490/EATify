@@ -1,10 +1,13 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import logo from '../media/french-fries.png'
 import { Link } from 'react-router-dom';
+import UserContext from '../utils/UserContext';
 
 
 const Header = () =>{ 
    const [logToggle, setLogToggle] = useState("Login");
+
+   const {loggedInUser} = useContext(UserContext);
    
    return (
    <div className= 'flex p-4 justify-between border-b-2 border-b-slate-400 sm:flex gap-6'  >
@@ -32,6 +35,7 @@ const Header = () =>{
                   {logToggle}
                </button>
             </li>
+            <li className='list-item line-height-10  hover:text-orange-500'>{ loggedInUser }</li>
          </ul>
       </div>
    </div>

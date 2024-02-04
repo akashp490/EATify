@@ -18,8 +18,6 @@ import RestaurantCategory from "./RestaurantCategory";
    const [showIndex, setShowIndex] = useState(); 
    const [showItemToggle, setShowItemToggle] = useState(false);
 
-   console.log(showIndex);
-   console.log(showItemToggle);
 
    const fetchRes = async() => {
       const response = await fetch('/menuApi' + resId);
