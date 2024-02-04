@@ -5,7 +5,7 @@ import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
 import SearchBox from './search-component';
 
-// import resApi from '../utils/mockData';
+import resApi from '../utils/mockData';
 
 
 
@@ -28,12 +28,14 @@ const Body = () => {
    
    const fetchData = async () => {
       try {
-         const response = await fetch('https://just-another-food-app.netlify.app/.netlify/functions/proxy');
+         const response = await fetch('/api');
          const json = await response?.json();               
          setListOfRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
          setFilteredResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       } catch (error) {
          console.error("Error fetching api data");
+         setListOfRes(resApi.map( e => e));
+         setFilteredResList(resApi.map(e => e));
       }
    } 
     
