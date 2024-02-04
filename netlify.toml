@@ -1,0 +1,3 @@
+[[functions]]
+  directory = "functions"
+  handler = "proxy.js"  // Specify the file name of your function
