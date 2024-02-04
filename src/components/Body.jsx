@@ -28,7 +28,7 @@ const Body = () => {
    
    const fetchData = async () => {
       try {
-         const response = await fetch('/api');
+         const response = await fetch('https://just-another-food-app.netlify.app/.netlify/functions/proxy');
          const json = await response?.json();               
          setListOfRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
          setFilteredResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);

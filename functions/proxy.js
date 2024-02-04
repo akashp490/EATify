@@ -6,3 +6,5 @@ exports.handler = async (event, context) => {
 
   return response.json(); // Or handle other response types as needed
 };
+
+// https://just-another-food-app.netlify.app/.netlify/functions/proxy
