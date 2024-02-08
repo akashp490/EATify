@@ -13,11 +13,11 @@ const Cart = () => {
   return (
     <div>
       {addedItems.map((item) => (
-      <div key={item?.card?.info?.id}>
-         <div className="w-9/12">
+      <div key={item?.card?.info?.id} className="flex p-4 justify-between items-center w-[60%] ml-[190px] border-t-2  ">
+               <div className= "text-left">
                   <span className="font-semibold">{item?.card?.info?.name}</span>
-                  <span className=""> -  ₹ {item?.card?.info?.price ? item?.card?.info?.price /100 : item?.card?.info?.defaultPrice / 100}</span>
-                  <p className="mt-3 pr-3 text-xs ">{item?.card?.info?.description}</p> 
+                  <span> -  ₹ {item?.card?.info?.price ? item?.card?.info?.price /100 : item?.card?.info?.defaultPrice / 100}</span>
+                  
                </div>
                
                <div className="p-1 m-2 w-3/12  ">                  
