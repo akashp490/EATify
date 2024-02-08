@@ -1,3 +1,0 @@
-[[functions]]
-  directory = "functions"
-  handler = "proxy.js"

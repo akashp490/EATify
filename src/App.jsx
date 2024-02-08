@@ -16,6 +16,8 @@ import Shimmer from './components/Shimmer';
 import RestaurantMenu from './components/RestaurantMenu';
 import UserContext from './utils/UserContext';
 import { useEffect } from 'react';
+import { Provider } from 'react-redux';
+import appStore from './utils/appStore';
 
 
 
@@ -34,12 +36,14 @@ const AppLayout = () =>{
    
    
    return(  
-   <UserContext.Provider value={{ loggedInUser: userName}} >    
-      <div className='p-4'>
-         <Header />
-         <Outlet  />
-      </div>
-   </UserContext.Provider>
+      <Provider store={appStore} >
+         <UserContext.Provider value={{ loggedInUser: userName}} >    
+            <div className='p-4'>
+               <Header />
+               <Outlet  />
+            </div>
+         </UserContext.Provider>
+      </Provider>
 )};
 
 const appRouter = createBrowserRouter([

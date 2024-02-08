@@ -28,10 +28,10 @@ const Body = () => {
    
    const fetchData = async () => {
       try {
-         const response = await fetch('/.netlify/functions/proxy');
+         const response = await fetch('/api');
          const json = await response?.json();               
-         setListOfRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-         setFilteredResList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+         setListOfRes(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+         setFilteredResList(json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       } catch (error) {
          console.error("Error fetching api data");
          setListOfRes(resApi.map( e => e));
