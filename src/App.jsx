@@ -25,6 +25,8 @@ import appStore from './utils/appStore';
 
 const Grocery = lazy(() => import('./components/Grocery'));
 
+const Cart =  lazy(() => import('./components/Cart'));
+
 const AppLayout = () =>{ 
    
    const [userName, setUserName] = useState();
@@ -70,6 +72,10 @@ const appRouter = createBrowserRouter([
          {
             path: "/grocery",
             element: <Suspense fallback= {<Shimmer/>}> <Grocery  /> </Suspense>
+         },
+         {
+            path: "/cart",
+            element: <Suspense fallback= {<Shimmer/>}><Cart  /></Suspense>
          },
       ],
       errorElement: <Error />

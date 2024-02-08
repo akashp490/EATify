@@ -1,13 +1,22 @@
 /* eslint-disable react/prop-types */
 
+import { useDispatch } from "react-redux";
 import { IMG_URL } from "../utils/constants";
+import { addItem } from "../utils/cartSlice";
 
 
 const ItemList = ({ items }) => {    
 
+   const dispatch = useDispatch();
+
+   const handleClick = (item) => {
+      dispatch(addItem(item));
+      console.log(item);
+   }
+   
    
   return (
-    <div className="">
+    <div>
       
       {items.map((item) => (
          <div key={item?.card?.info?.id} className="my-2 p-2 flex items-center border-t-2 text-left cursor-default" >
@@ -19,7 +28,9 @@ const ItemList = ({ items }) => {
                
                <div className="p-1 m-2 w-3/12  ">
                   <button 
-                     className="absolute bg-orange-400 p-2 text-md rounded-lg font-semibold ml-[67px] mt-[130px]">
+
+                     onClick={() => handleClick(item)}
+                     className="absolute bg-orange-400 p-2 text-md rounded-lg font-semibold ml-[67px] mt-[130px] hover:bg-orange-500 active:bg-orange-600">
                         Add +
                   </button>
                   <img src={IMG_URL + item?.card?.info?.imageId} className="rounded-xl object-cover h-[150px] w-full " />

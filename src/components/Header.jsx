@@ -2,15 +2,20 @@ import { useContext, useState } from 'react'
 import logo from '../media/french-fries.png'
 import { Link } from 'react-router-dom';
 import UserContext from '../utils/UserContext';
+import { useSelector } from 'react-redux';
 
 
 const Header = () =>{ 
    const [logToggle, setLogToggle] = useState("Login");
 
    const {loggedInUser} = useContext(UserContext);
+
+   //Subscribing to our store
+   const cartItems = useSelector((store) => {console.log(store.cart.items); return store.cart.items});
+   
    
    return (
-   <div className= 'flex p-4 justify-between border-b-2 border-b-slate-400 sm:flex gap-6'  >
+   <div className= 'flex p-4 justify-between border-b-2 border-b-slate-400 sm:flex gap-6'>
       
       <div className= 'items-center' >
          <Link to="/" className='flex gap-3 align-middle font-extrabold'> <img 
@@ -24,7 +29,7 @@ const Header = () =>{
             <li className='list-item line-height-10  hover:text-orange-500'><Link to="/about">About</Link></li>
             <li className='list-item line-height-10  hover:text-orange-500'><Link to="/contact">Contact</Link></li>         
             <li className='list-item line-height-10  hover:text-orange-500'><Link to="/grocery">Grocery</Link></li>         
-            <li className='list-item line-height-10  hover:text-orange-500'>Cart</li>
+            <li className='list-item line-height-10  hover:text-orange-500'><Link to="/cart">Cart({cartItems.length})</Link></li>
             <li className='list-item line-height-10'>
                <button 
                   className="bg-orange-400 px-3 py-1 rounded-full font-medium hover:bg-orange-500 active:bg-orange-900"
@@ -35,7 +40,7 @@ const Header = () =>{
                   {logToggle}
                </button>
             </li>
-            <li className='list-item line-height-10  hover:text-orange-500'>{ loggedInUser }</li>
+            <li className='list-item line-height-10  hover:text-orange-500'>{ loggedInUser  }</li>
          </ul>
       </div>
    </div>
