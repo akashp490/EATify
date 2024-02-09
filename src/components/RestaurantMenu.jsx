@@ -3,7 +3,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import Shimmer from "./Shimmer";
 import RestaurantCategory from "./RestaurantCategory";
 import MockResMenu from "./mockResMenu";
 
@@ -45,9 +44,7 @@ import MockResMenu from "./mockResMenu";
    );
 
    
-   // if(resInfo?.length === 0){
-   //    return <Shimmer  />
-   // }
+  
 
    if(resInfo?.statusMessage === "Oops!! Something Went Wrong" ||resInfo?.length === 0 )
       return <MockResMenu  />
