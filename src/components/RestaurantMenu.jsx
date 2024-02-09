@@ -45,11 +45,11 @@ import MockResMenu from "./mockResMenu";
    );
 
    
-   if(resInfo?.length === 0){
-      return <Shimmer  />
-   }
+   // if(resInfo?.length === 0){
+   //    return <Shimmer  />
+   // }
 
-   if(resInfo?.statusMessage === "Oops!! Something Went Wrong" )
+   if(resInfo?.statusMessage === "Oops!! Something Went Wrong" ||resInfo?.length === 0 )
       return <MockResMenu  />
       
 
