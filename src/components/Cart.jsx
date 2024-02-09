@@ -1,5 +1,6 @@
 import {  useSelector } from "react-redux";
 import { IMG_URL } from "../utils/constants";
+import logo from '../media/icons8-search.svg'
 
 
 const Cart = () => {
@@ -7,8 +8,13 @@ const Cart = () => {
  const addedItems = useSelector((store) => store.cart.items);
 
  if(addedItems.length === 0){
-   return <h1 className="text-center mt-20 font-bold text-xl">Cart is empty. Add some items to it.</h1>
- }
+   return (
+      <div className="grid place-items-center" >
+         <h1 className=" mt-20 font-bold text-2xl">Cart is empty. Add some items to it.</h1>
+         <img src={logo} className="mt-[90px] w-[150px]"  />
+      </div>
+   
+ )}
 
   return (
     <div>
