@@ -1,60 +1,27 @@
-/* eslint-disable no-unsafe-optional-chaining */
-/* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect } from "react";
+import resMockMenu from "../utils/mockMenuData"
 import { useState } from "react";
-import { useParams } from "react-router-dom";
-import Shimmer from "./Shimmer";
 import RestaurantCategory from "./RestaurantCategory";
-import MockResMenu from "./mockResMenu";
 
 
-
-
- const RestaurantMenu = () => {
-   // const [resinfo, setResInfo] = useState([]);
+const MockResMenu = () => {
+   const [resInfo, setResInfo] = useState(resMockMenu);
    
-   const [resInfo, setResInfo] = useState([]);
-   const { resId } = useParams();
-
    const [showIndex, setShowIndex] = useState(); 
    const [showItemToggle, setShowItemToggle] = useState(false);
 
-
-   const fetchRes = async() => {
-      try {
-         const response = await fetch('/menuApi' + resId);
-         const json = await response?.json();      
-         setResInfo(json);
-      } catch (error) {
-         console.error("Error fetching restaurant menu api");      
-         
-      }
-   }
-   
-   useEffect(() => {
-      fetchRes();
-   },[])
-   
+   console.log(resInfo);
 
    const { name, areaName, sla, avgRatingString, totalRatingsString} = resInfo?.data?.cards[0]?.card?.card?.info ?? {} ;
-   
 
    const categories =
     resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter( (c) => 
       c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
    );
 
-   
-   if(resInfo?.length === 0){
-      return <Shimmer  />
-   }
 
-   if(resInfo?.statusMessage === "Oops!! Something Went Wrong" )
-      return <MockResMenu  />
-      
 
-  return (
-   <div className="text-center w-[70%] ml-[150px] ">
+  return (   
+  <div className="text-center w-[70%] ml-[150px] ">
     <div className="flex mt-8  p-4 text-left  justify-between  border-b-2 border-dashed border-slate-200">
       <div className=" ">
          <h1 className="font-bold text-2xl">{name}</h1>
@@ -79,8 +46,8 @@ import MockResMenu from "./mockResMenu";
     ))}
     </div>
     
-   </div> 
+   </div>  
   )  
 }
 
-export default RestaurantMenu
+export default MockResMenu

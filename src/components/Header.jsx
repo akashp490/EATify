@@ -11,7 +11,7 @@ const Header = () =>{
    const {loggedInUser} = useContext(UserContext);
 
    //Subscribing to our store
-   const cartItems = useSelector((store) => {console.log(store.cart.items); return store.cart.items});
+   const cartItems = useSelector((store) => { return store.cart.items});
    
    
    return (

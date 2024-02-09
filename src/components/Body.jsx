@@ -38,8 +38,7 @@ const Body = () => {
          setFilteredResList(resApi.map(e => e));
       }
    } 
-    
-   
+       
 
    if(listOfRes?.length === 0) {            
       return (

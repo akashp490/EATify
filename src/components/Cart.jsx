@@ -20,7 +20,7 @@ const Cart = () => {
                   
                </div>
                
-               <div className="p-1 m-2 w-3/12  ">                  
+               <div className="p-1 m-2 w-3/12">                  
                   <img src={IMG_URL + item?.card?.info?.imageId} className="rounded-xl object-cover h-[150px] w-full " />
                </div>
 
